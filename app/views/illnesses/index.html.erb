@@ -1,0 +1,27 @@
+<h1>Listing illnesses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Definition</th>
+    <th>Symtom</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @illnesses.each do |illness| %>
+  <tr>
+    <td><%= illness.name %></td>
+    <td><%= illness.definition %></td>
+    <td><%= illness.symtom_id %></td>
+    <td><%= link_to 'Show', illness %></td>
+    <td><%= link_to 'Edit', edit_illness_path(illness) %></td>
+    <td><%= link_to 'Destroy', illness, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Illness', new_illness_path %>
